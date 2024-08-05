@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+     <style>
+        body{
+            background: linear-gradient(to right, red, black);
+
+            color:white;
+            text-align:center;
+            
+        }
+       .row{
+        display: flex;
+        align-item:center;
+        justify-content:center;
+       }
+       .column{
+        width: 350px;
+        margin:10px;
+        border:1px solid white;
+        padding:20px;
+        text-align:center;
+        height:390px;
+       }
+       img{
+        width:100%;
+        height:250px;
+        object-fit:contain;
+       }
+     </style>
+</head>
+<body>
+    
+    <h1>SECRETS YOU DIDN'T KNOW ABOUT ____. ...</h1>
+    <div class='row'>
+        {%for data in posts%}
+        <div class='column'>
+            <div class='img-box'>
+                <img src='{{data.img1.url}}' alt="profile_img">
+                <h1>{{data.title}}</h1>
+            </div>
+            <div class='detail'>
+              <button><a href="{%url 'more' data.pk%}">read more...</a></button>
+            </div>
+            
+        </div>
+        {%endfor%}
+    </div>
+    d
+   
+</body>
+</html>
